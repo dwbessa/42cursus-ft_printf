@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:25:12 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/19 17:41:02 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/19 18:08:31 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,4 @@ void	ft_puthexa(unsigned int d)
 		ft_puthexa((d - r) / 16);
 	if (d - r != 0)
 		to_char(r);
-}
-
-int	main()
-{
-	unsigned int	i;
-	i = 0;
-	while (i < 256)
-	{
-		ft_puthexa(i);
-		ft_putchar(' ');
-		i++;
-	}
 }
