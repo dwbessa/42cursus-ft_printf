@@ -6,32 +6,41 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:20:59 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/19 17:01:12 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/19 18:59:50 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 #include "ft_printf.h"
 
-int	ft_printf(const char *fmt, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list		ap;
 	int			i;
-	int			d;
-	char		c;
-	char		*s;
+	int			ret;
 
-	va_start(ap, fmt);
-	while (fmt[i] != '\0')
+	i = 0;
+	ret = 0;
+	va_start(ap, format);
+	while (format[i] != '\0')
 	{
-		if ((fmt[i] == %) && (fmt[i + 1] == ft_strchr("cspdiuxX%", fmt[i + 1])))
+		if ((format[i] =='%') && (ft_strchr("cspdiuxX%", format[i + 1])))
 		{
-			va_arg(ap, check_argument(fmt[i + 1]));
+			ret += check_argument(format, i, ap);
+			i++;
 		}
-
+		else
+			ret += ft_putchar(format[i]);
+		i++;
 	}
 	va_end(ap);
-	return (
+	return (i);
+}
+
+
+int	main()
+{
+	ft_printf("Eu sou o Daniel %s e tenho %d anos e %umg. Meu endereço de memória é 0x%X. Tenho %d%% de bateria", "Bessa", 29, 4294967295, 123, 97);
 }
 
 //	while (*fmt)

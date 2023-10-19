@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_puthexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 11:08:39 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/19 18:38:56 by dbessa           ###   ########.fr       */
+/*   Created: 2023/10/19 15:25:12 by dbessa            #+#    #+#             */
+/*   Updated: 2023/10/19 18:51:25 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-#include <unistd.h>
+static void	to_char(unsigned int n)
+{
+	const char	*alphaHex = "0123456789ABCDEF";
 
-int		ft_printf(const char *fmt, ...);
-int	ft_putchar(char c);
-void	ft_putnbr(int nb);
-void	ft_putstr(char *str);
-void	ft_putunsnbr(unsigned int nb);
-void	ft_puthexa(unsigned int d);
-int	check_argument(const char *arg, int i, va_list ap);
+	write(1, &alphaHex[n], 1);
+}
 
-#endif
+void	ft_puthexa(unsigned int d)
+{
+	int	r;
+
+	r = d % 16;
+	if (d - r == 0)
+		to_char(r);
+	else
+		ft_puthexa((d - r) / 16);
+	if (d - r != 0)
+		to_char(r);
+}

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 09:18:12 by dbessa            #+#    #+#             */
-/*   Updated: 2023/07/28 12:20:47 by dbessa           ###   ########.fr       */
+/*   Created: 2023/09/02 11:41:12 by dbessa            #+#    #+#             */
+/*   Updated: 2023/10/13 14:09:33 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putunsnbr(unsigned int nb)
+char	*ft_strchr(const char *s, int c)
 {
-	if (nb >= 0 && nb <= 9)
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
 	{
-		ft_putchar(nb + '0');
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i++;
 	}
-	else
-	{
-		ft_putunsnbr(nb / 10);
-		ft_putunsnbr(nb % 10);
-	}
+	if (c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
