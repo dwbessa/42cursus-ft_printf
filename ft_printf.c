@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:20:59 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/19 18:59:50 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/20 08:46:41 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ int	ft_printf(const char *format, ...)
 
 int	main()
 {
-	ft_printf("Eu sou o Daniel %s e tenho %d anos e %umg. Meu endereço de memória é 0x%X. Tenho %d%% de bateria", "Bessa", 29, 4294967295, 123, 97);
+	int x = 29;
+	int *ptr = &x;
+	ft_printf("Eu sou o Daniel, mas pode me chamar de %c. %s e tenho %d anos e %umg de peso. Minha idade em hexadecimal é %x ou %X. Tenho %i%% de bateria e o endereço de memória da minha idade é %p. Obrigado por ler até aqui.", 'D', "Bessa", x, 4294967295, x, x, 97, ptr);
 }
 
 //	while (*fmt)
