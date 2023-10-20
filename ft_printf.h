@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:08:39 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/20 09:38:14 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/20 09:55:07 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <unistd.h>
+# include "libft.h"
 
 int		ft_printf(const char *fmt, ...);
 int		ft_putchar(char c);
