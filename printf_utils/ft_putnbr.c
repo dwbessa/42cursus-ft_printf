@@ -6,11 +6,12 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 09:18:12 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/19 18:48:04 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/20 09:47:40 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libft.h"
+#include "../ft_printf.h"
 
 void	ft_putnbr(int nb)
 {

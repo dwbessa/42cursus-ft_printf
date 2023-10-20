@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/26 14:48:50 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/19 18:42:19 by dbessa           ###   ########.fr       */
+/*   Created: 2023/08/01 12:59:02 by dbessa            #+#    #+#             */
+/*   Updated: 2023/10/20 09:47:34 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libft.h"
+#include "../ft_printf.h"
 
-int	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }

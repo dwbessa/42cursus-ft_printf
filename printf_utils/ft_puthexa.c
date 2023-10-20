@@ -6,21 +6,22 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:25:12 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/20 08:31:25 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/20 09:47:41 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libft.h"
+#include "../ft_printf.h"
 
 static void	to_char(unsigned int n, int arg)
 {
-	const char	*alphaUpp = "0123456789ABCDEF";
-	const char	*alphaLow = "0123456789abcdef";
+	const char	*alpha_upp = "0123456789ABCDEF";
+	const char	*alpha_low = "0123456789abcdef";
 
 	if (arg == 'X')
-		write(1, &alphaUpp[n], 1);
+		write(1, &alpha_upp[n], 1);
 	else if (arg == 'x')
-		write(1, &alphaLow[n], 1);
+		write(1, &alpha_low[n], 1);
 }
 
 void	ft_puthexa(unsigned int d, int arg)

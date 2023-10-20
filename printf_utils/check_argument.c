@@ -6,12 +6,12 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:13:46 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/20 08:37:53 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/20 09:45:46 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
+#include "../libft.h"
+#include "../ft_printf.h"
 
 int	check_argument(const char *arg, int i, va_list ap)
 {
