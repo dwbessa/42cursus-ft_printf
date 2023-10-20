@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:13:46 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/20 09:45:46 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/20 13:49:34 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@
 int	check_argument(const char *arg, int i, va_list ap)
 {
 	if (arg[i + 1] == 'c')
-		ft_putchar(va_arg(ap, int));
+		return (ft_putchar(va_arg(ap, int)));
 	else if (arg[i + 1] == 's')
-		ft_putstr(va_arg(ap, char *));
+		return (ft_putstr(va_arg(ap, char *)));
 	else if (arg[i + 1] == 'd' || arg[i + 1] == 'i')
-		ft_putnbr(va_arg(ap, int));
+		return (ft_putnbr(va_arg(ap, int)));
 	else if (arg[i + 1] == 'u')
-		ft_putunsnbr(va_arg(ap, unsigned int));
+		return (ft_putunsnbr(va_arg(ap, unsigned int)));
 	else if (arg[i + 1] == 'p')
 	{
 		ft_putstr("0x");
-		ft_puthexa(va_arg(ap, unsigned int), 'x');
+		return (ft_puthexa(va_arg(ap, unsigned int), 'x') + 2);
 	}
 	else if (arg[i + 1] == 'x' || arg[i + 1] == 'X')
-		ft_puthexa(va_arg(ap, unsigned int), arg[i + 1]);
+		return (ft_puthexa(va_arg(ap, unsigned int), arg[i + 1]));
 	else if (arg[i + 1] == '%')
-		ft_putchar('%');
+		return (ft_putchar('%'));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:08:39 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/20 09:55:07 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/20 12:44:17 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 int		ft_printf(const char *fmt, ...);
 int		ft_putchar(char c);
-void	ft_putnbr(int nb);
-void	ft_putstr(char *str);
-void	ft_putunsnbr(unsigned int nb);
-void	ft_puthexa(unsigned int d, int arg);
+int		ft_putnbr(int nb);
+int		ft_putstr(char *str);
+int		ft_putunsnbr(unsigned int nb);
+int		ft_puthexa(unsigned int d, int arg);
 int		check_argument(const char *arg, int i, va_list ap);
 
 #endif

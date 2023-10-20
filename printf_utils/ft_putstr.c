@@ -6,14 +6,14 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:59:02 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/20 09:47:34 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/20 12:41:07 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include "../ft_printf.h"
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int	i;
 
@@ -23,4 +23,5 @@ void	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
+	return (i);
 }
