@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:08:39 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/19 18:38:56 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/20 08:29:49 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <unistd.h>
 
 int		ft_printf(const char *fmt, ...);
-int	ft_putchar(char c);
+int		ft_putchar(char c);
 void	ft_putnbr(int nb);
 void	ft_putstr(char *str);
 void	ft_putunsnbr(unsigned int nb);
-void	ft_puthexa(unsigned int d);
-int	check_argument(const char *arg, int i, va_list ap);
+void	ft_puthexa(unsigned int d, int arg);
+int		check_argument(const char *arg, int i, va_list ap);
 
 #endif
