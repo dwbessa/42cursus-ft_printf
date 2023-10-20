@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:13:46 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/19 18:54:26 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/20 08:37:53 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int	check_argument(const char *arg, int i, va_list ap)
 		ft_putnbr(va_arg(ap, int));
 	else if (arg[i + 1] == 'u')
 		ft_putunsnbr(va_arg(ap, unsigned int));
-//	else if (arg == 'p')
-//	{
-//		ft_putstr("0x");
-//		ft_puthexa(arg);
-//	}
+	else if (arg[i + 1] == 'p')
+	{
+		ft_putstr("0x");
+		ft_puthexa(va_arg(ap, unsigned int), 'x');
+	}
 	else if (arg[i + 1] == 'x' || arg[i + 1] == 'X')
-		ft_puthexa(va_arg(ap, unsigned int));
+		ft_puthexa(va_arg(ap, unsigned int), arg[i + 1]);
 	else if (arg[i + 1] == '%')
 		ft_putchar('%');
 	return (0);
