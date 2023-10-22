@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunsnbr.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 09:18:12 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/20 14:22:33 by dbessa           ###   ########.fr       */
+/*   Created: 2023/08/01 12:59:02 by dbessa            #+#    #+#             */
+/*   Updated: 2023/10/22 19:32:21 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 #include "../ft_printf.h"
 
-int	ft_putunsnbr(unsigned int nb)
+int	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (nb >= 0 && nb <= 9)
+	while (str[i] != '\0')
 	{
-		ft_putchar(nb + '0');
+		write(1, &str[i], 1);
 		i++;
-	}
-	else
-	{
-		ft_putunsnbr(nb / 10);
-		ft_putunsnbr(nb % 10);
 	}
 	return (i);
 }

@@ -6,11 +6,11 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:25:12 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/20 13:00:01 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/22 19:32:19 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 #include "../ft_printf.h"
 
 static void	to_char(unsigned int n, int arg)

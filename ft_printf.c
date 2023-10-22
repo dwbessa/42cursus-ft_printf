@@ -6,11 +6,11 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:20:59 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/20 14:26:06 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/22 19:35:47 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./srcs/libft.h"
 #include "ft_printf.h"
 
 int	ft_printf(const char *format, ...)
@@ -18,11 +18,9 @@ int	ft_printf(const char *format, ...)
 	va_list		ap;
 	int			i;
 	int			ret;
-	int			result;
 
 	i = 0;
 	ret = 0;
-	result = 0;
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
