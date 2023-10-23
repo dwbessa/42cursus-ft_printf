@@ -16,7 +16,7 @@ RM		= rm -f
 
 NAME	= libftprintf.a
 
-SRCS	= ft_printf.c srcs/ft_strchr.c srcs/check_argument.c srcs/ft_putchar.c \
+SRCS	= ft_printf.c libft/ft_strchr.c srcs/check_argument.c srcs/ft_putchar.c \
 			srcs/ft_puthexa.c srcs/ft_putnbr.c srcs/ft_putstr.c \
 			srcs/ft_putunsnbr.c \
 

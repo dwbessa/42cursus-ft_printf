@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "../ft_printf.h"
 
 int	check_argument(const char *arg, int i, va_list ap)

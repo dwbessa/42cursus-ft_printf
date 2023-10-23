@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "../ft_printf.h"
 
 static void	to_char(unsigned long n, int arg, int *count)
