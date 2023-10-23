@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:59:02 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/22 19:32:21 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/23 15:46:58 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ int	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);

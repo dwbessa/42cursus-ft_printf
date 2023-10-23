@@ -6,27 +6,23 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 09:18:12 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/22 21:03:21 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/23 16:17:12 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "../ft_printf.h"
 
-int	ft_putunsnbr(unsigned int nb)
-{
-	unsigned int	i;
+int	ft_putunsnbr(unsigned int num)
 
-	i = 0;
-	if (nb < 10)
-	{
-		ft_putchar(nb + '0');
-		i++;
-	}
-	else
-	{
-		ft_putunsnbr(nb / 10);
-		ft_putunsnbr(nb % 10);
-	}
-	return (i);
+{
+	static unsigned int	count;
+	unsigned int			sign;
+
+	sign = 0;
+	count = 0;
+	if (num >= 10)
+		ft_putunsnbr(num / 10);
+	count += ft_putchar((num % 10) + 48);
+	return (count + sign);
 }

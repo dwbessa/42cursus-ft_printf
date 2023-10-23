@@ -6,38 +6,33 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 09:18:12 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/22 19:32:20 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/23 16:14:48 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "../ft_printf.h"
 
-int	ft_putnbr(int nb)
-{
-	int	i;
+int	ft_putnbr(int num)
 
-	i = 0;
-	if (nb == -2147483648)
+{
+	static int	count;
+	int			sign;
+
+	sign = 0;
+	count = 0;
+	if (num == -2147483648)
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
+		count = write(1, "-2147483648", 11);
+		return (count);
 	}
-	else if (nb < 0)
+	if (num < 0)
 	{
-		ft_putchar('-');
-		ft_putnbr(nb * -1);
+		sign = ft_putchar('-');
+		num *= -1;
 	}
-	else if (nb >= 0 && nb <= 9)
-	{
-		ft_putchar(nb + '0');
-		i++;
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	return (i);
+	if (num >= 10)
+		ft_putnbr(num / 10);
+	count += ft_putchar((num % 10) + 48);
+	return (count + sign);
 }

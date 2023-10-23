@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:20:59 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/22 19:58:18 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/23 17:39:56 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,21 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else
-		{
 			ret += ft_putchar(format[i]);
-			ret++;
-		}
 		i++;
 	}
 	va_end(ap);
 	return (ret);
 }
+/*
+#include <stdio.h>
+int    main(void)
+{
+    int    x = 29;
+    int    *ptr = NULL;
+    char str[] = "THE SKY IS BLUE";
+    ft_printf("%p", ptr);
+
+    printf("\nThe value returned by printf() for the above string is : %d\n\n", printf("%s", str));
+    ft_printf("\nThe value returned by ft_printf() for the above string is : %d", ft_printf("%s", str));
+}*/
