@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:20:59 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/23 17:39:56 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/24 18:15:50 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (ret);
 }
-/*
-#include <stdio.h>
-int    main(void)
-{
-    int    x = 29;
-    int    *ptr = NULL;
-    char str[] = "THE SKY IS BLUE";
-    ft_printf("%p", ptr);
-
-    printf("\nThe value returned by printf() for the above string is : %d\n\n", printf("%s", str));
-    ft_printf("\nThe value returned by ft_printf() for the above string is : %d", ft_printf("%s", str));
-}*/

@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:25:12 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/23 17:39:47 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/24 15:20:02 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,21 @@ static void	to_char(unsigned long n, int arg, int *count)
         hex = alpha_upp[n % 16];
     else if (arg == 'x')
         hex = alpha_low[n % 16];
+    else if (arg == 'p')
+        hex = alpha_low[n % 16];
     write(1, &hex, 1);
     (*count)++;
+}
+
+static  int    if_pointer(unsigned long d)
+{
+    if (d == 0)
+    {
+        ft_putstr("(nil)");
+        return (3);
+	}
+    else
+        return (0);
 }
 
 int	ft_puthexa(unsigned long d, int arg)
@@ -35,9 +48,12 @@ int	ft_puthexa(unsigned long d, int arg)
     count = 0;
     if (d == 0)
     {
-        to_char(d, arg, &count);
-        return (count);
+        if (arg == 'p')
+            return (if_pointer(d));
+		to_char(d, arg, &count);
     }
+    if (arg == 'p' && d != 0)
+        ft_putstr("0x");
     i = 0;
     while (d > 0)
     {
