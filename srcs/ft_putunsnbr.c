@@ -6,7 +6,7 @@
 /*   By: dbessa <dbessa@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 09:18:12 by dbessa            #+#    #+#             */
-/*   Updated: 2023/10/23 16:17:12 by dbessa           ###   ########.fr       */
+/*   Updated: 2023/10/25 08:41:45 by dbessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putunsnbr(unsigned int num)
 
 {
-	static unsigned int	count;
+	static unsigned int		count;
 	unsigned int			sign;
 
 	sign = 0;
